@@ -1,24 +1,53 @@
 # 🧠 ELI5 Bot
 
-A web app that explains any complex topic in simple terms — powered by Claude AI with real-time streaming.
+> Paste any complex topic. Get an instant, crystal-clear explanation — streamed word by word, tuned to your level.
 
-Built as part of the [LLM Engineering Roadmap 2026](https://github.com/praneeth-kalluri/LLM-Engineering-Roadmap) — Week 1 project.
+---
+
+## 📸 Demo
+
+### Screenshot the clean UI before any input
+![ELI5 UI_screenshot](./screenshots/ELI5-uipage.png)
+
+### ELI5 vs Expert — Same Topic, Different Complexity
+| ELI5 | Expert |
+|------|--------|
+| ![ELI5 screenshot](./screenshots/eli5.png) | ![Expert screenshot](./screenshots/expert.png) |
+
+> *Topic: "How does the internet work?" — notice how the explanation adapts completely*
+
+---
 
 ## ✨ Features
 
-- 🎚️ Complexity slider: ELI5 / High School / College / Expert
-- 🤖 Model selector: Claude Haiku (fast) or Claude Sonnet (smart)
-- ⚡ Real-time streaming — words appear one by one
-- 📊 Metrics bar: response time and token count
+| Feature | Details |
+|--------|---------|
+| 🎚️ Complexity Slider | ELI5 → High School → College → Expert |
+| 🤖 Model Selector | Claude Haiku (fast & cheap) or Claude Sonnet (smarter) |
+| ⚡ Real-time Streaming | Words appear one by one as Claude generates them |
+| 📊 Metrics Bar | Response time (ms) + estimated token count per request |
+| ⌨️ Keyboard Support | Press Enter to submit |
+
+---
 
 ## 🛠️ Tech Stack
 
-- [Next.js 16](https://nextjs.org/) — App Router
-- [Vercel AI SDK v6](https://sdk.vercel.ai/) — streaming
-- [@ai-sdk/anthropic](https://sdk.vercel.ai/providers/ai-sdk-providers/anthropic) — Anthropic provider
-- [Tailwind CSS v3](https://tailwindcss.com/) — styling
+| Layer | Technology |
+|-------|-----------|
+| Framework | [Next.js 16](https://nextjs.org/) — App Router |
+| AI SDK | [Vercel AI SDK v6](https://sdk.vercel.ai/) — `streamText` |
+| AI Provider | [@ai-sdk/anthropic](https://sdk.vercel.ai/providers/ai-sdk-providers/anthropic) |
+| Models | `claude-haiku-4-5` · `claude-sonnet-4-6` |
+| Styling | [Tailwind CSS v3](https://tailwindcss.com/) |
+| Language | TypeScript |
+
+---
 
 ## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- An Anthropic API key from [console.anthropic.com](https://console.anthropic.com)
 
 ### 1. Clone the repo
 ```bash
@@ -31,20 +60,24 @@ cd eli5-bot
 npm install
 ```
 
-### 3. Add your Anthropic API key
-Create a `.env.local` file in the root:
+### 3. Configure environment
+Create a `.env.local` file in the project root:
+```bash
+ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxxxxx
+```
+> ⚠️ Never commit this file. It is already protected by `.gitignore`.
 
-Get your key at [console.anthropic.com](https://console.anthropic.com)
-
-### 4. Run the app
+### 4. Run locally
 ```bash
 npm run dev
 ```
+Open [http://localhost:3000](http://localhost:3000)
 
-Open [http://localhost:3000](http://localhost:3000) and start explaining!
+---
 
 ## 📁 Project Structure
 
+```
 eli5-bot/
 ├── app/
 │   ├── api/
@@ -55,4 +88,4 @@ eli5-bot/
 │   └── page.tsx           # Main UI (input, slider, dropdown, stream)
 ├── .env.local             # Your API key (never committed)
 └── README.md
-
+```
