@@ -2,6 +2,12 @@
 
 > Paste any complex topic. Get an instant, crystal-clear explanation — streamed word by word, tuned to your level.
 
+This project explores how **prompt engineering** and **model selection** dramatically change AI output quality. By injecting a complexity instruction directly into Claude's system prompt, the same question - *"How does the internet work?"* — gets a candy-and-roads analogy at ELI5 level, and a TCP/IP packet-switching breakdown at Expert level. 
+
+I also compared Anthropic's **Claude Haiku** (optimised for speed and cost) against **Claude Sonnet** (optimised for reasoning depth). Haiku responds in under a second with punchy answers, while Sonnet takes a breath longer but returns noticeably richer explanations. Both models stream their response token by token over a `ReadableStream`, so you watch the answer build in real time rather than waiting for a single dump of text. 
+
+The result is a tool that makes the same AI feel like a patient kindergarten teacher or a seasoned academic just by changing a slider.
+
 ---
 
 ## 📸 Demo
@@ -14,7 +20,7 @@
 |------|--------|
 | ![ELI5 screenshot](./screenshots/eli5.png) | ![Expert screenshot](./screenshots/expert.png) |
 
-> *Topic: "How does the internet work?" — notice how the explanation adapts completely*
+> *Topic: "How does Wifi work?" — notice how the explanation adapts completely*
 
 ---
 
