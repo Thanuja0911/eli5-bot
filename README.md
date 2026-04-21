@@ -44,3 +44,15 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) and start explaining!
 
 ## 📁 Project Structure
+
+eli5-bot/
+├── app/
+│   ├── api/
+│   │   └── chat/
+│   │       └── route.ts   # Streaming API route (Anthropic + streamText)
+│   ├── globals.css        # Tailwind base styles
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Main UI (input, slider, dropdown, stream)
+├── .env.local             # Your API key (never committed)
+└── README.md
+
